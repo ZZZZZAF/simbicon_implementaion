@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="slope_skeleton2">
+    <link name="world" />
+	
+    <joint name="slope2_link_transform" type="fixed">
+        <origin xyz="10.5 -7.7 0.075" rpy="0 0 0" />
+        <parent link="world" />
+        <child link="slope2_link_transform" />
+    </joint>	
+	<link name="slope2_link_transform" />
+	
+    <link name="slope2_link1">
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="3.0 4.0 0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0 1 0 1" />
+			</material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="3.0 4.0 0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="slope2_joint1" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0.05 -1.57" />
+        <parent link="slope2_link_transform" />
+        <child link="slope2_link1" />
+    </joint>
+	
+</robot>
+

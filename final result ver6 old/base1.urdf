@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="base_skeleton1">
+    <link name="world" />
+		
+
+	<link name="base_link">
+		<inertial>
+            <mass value="10.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+        </inertial> 
+ 
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.2 0.2 0.2" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.5 0.9 0.2 1" />
+		  </material>
+        </visual>
+        
+        <collision group="default">
+            <origisn xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.2 0.2 0.2" />
+            </geometry>
+        </collision>
+    </link>
+	<joint name="base_joint" type="floating">
+        <origin xyz="9.5 -3 0.13" rpy="0 0 0" />
+        <parent link="world" />
+        <child link="base_link" />
+    </joint>
+	
+	
+	
+	
+	
+    
+
+	
+    
+
+	
+</robot>

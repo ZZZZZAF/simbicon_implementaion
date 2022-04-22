@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<robot name="ball3 skeleton">
+    <link name="world" />
+	
+	<joint name="link_transform_joint" type="fixed">
+        <origin xyz="10.5 -4 0.08" rpy="0 0 0" />
+        <parent link="world" />
+        <child link="link_transform_link" />
+    </joint>	
+	<link name="link_transform_link" />
+    
+    <link name="ball3_link1">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius ="0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius ="0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint1" type="floating">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link1" />
+    </joint>
+	
+	
+	
+	<link name="ball3_link2">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint2" type="floating">
+        <origin xyz="1 0 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link2" />
+    </joint>
+	
+	<link name="ball3_link3">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint3" type="floating">
+        <origin xyz="2 0 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link3" />
+    </joint>
+	
+	<link name="ball3_link4">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint4" type="floating">
+        <origin xyz="-1 0 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link4" />
+    </joint>
+	
+	<link name="ball3_link5">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint5" type="floating">
+        <origin xyz="1 1 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link5" />
+    </joint>
+	
+	<link name="ball3_link6">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint6" type="floating">
+        <origin xyz="2 1 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link6" />
+    </joint>
+	
+	<link name="ball3_link7">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint7" type="floating">
+        <origin xyz="-1 1 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link7" />
+    </joint>
+	
+	<link name="ball3_link8">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint8" type="floating">
+        <origin xyz="1 2 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link8" />
+    </joint>
+	
+	<link name="ball3_link9">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint9" type="floating">
+        <origin xyz="2 2 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link9" />
+    </joint>
+	
+	<link name="ball3_link10">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint10" type="floating">
+        <origin xyz="-1 2 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link10" />
+    </joint>
+	
+	<link name="ball3_link11">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint11" type="floating">
+        <origin xyz="0 1 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link11" />
+    </joint>
+	
+	<link name="ball3_link12">
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.7 0.6 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius  = "0.05" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="ball3_joint12" type="floating">
+        <origin xyz="0 2 0" rpy="0 0 0" />
+        <parent link="link_transform_link" />
+        <child link="ball3_link12" />
+    </joint>
+</robot>
+

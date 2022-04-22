@@ -1,0 +1,424 @@
+<?xml version="1.0" ?>
+<robot name="biped">
+    <link name="world" />   
+
+    <link name="l_pelvis">
+        <inertial>
+            <mass value="15.6154" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0 0" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.1088 0.23936 0.1088" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 -0 0" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.1088 0.23936 0.1088" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_pelvis" type="floating">
+        <origin xyz="0 0 0.4" rpy="0 0 0" />
+        <parent link="world" />
+        <child link="l_pelvis" />
+    </joint>
+	
+	<!-- Left Leg -->
+	
+	<link name="l_thigh_left">
+        <inertial>
+            <mass value="6.5709" />
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0 -0 -0.18605" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.093025 0.093025 0.3721" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <geometry>
+				<box size="0.093025 0.093025 0.3721" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_thigh_left_transform" type="fixed">
+        <origin xyz="-0.01 0.09072832 -0.05774016" rpy="0 0 0" />
+        <parent link="l_pelvis" />
+        <child link="l_thigh_left_transform" />
+    </joint>
+	<link name="l_thigh_left_transform" />
+	
+	<joint name="j_thigh_left_rx" type="revolute">
+        <parent link="l_thigh_left_transform" />
+        <child link="l_thigh_left_rx" />
+		<axis xyz="1 0 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_thigh_left_rx" />
+	
+    <joint name="j_thigh_left_ry" type="revolute">
+        <parent link="l_thigh_left_rx" />
+        <child link="l_thigh_left_ry" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_thigh_left_ry" />
+	
+    <joint name="j_thigh_left_rz" type="revolute">
+        <parent link="l_thigh_left_ry" />
+        <child link="l_thigh_left" />
+		<axis xyz="0 0 1" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	
+	<link name="l_shin_left">
+        <inertial>
+            <mass value="3.7738" />
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0 -0 -0.18605" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.07474 0.07474 0.3737" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <geometry>
+				<box size= "0.07474 0.07474 0.3737"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_shin_left" type="revolute">
+        <origin xyz="0 0 -0.3721" rpy="0 0.15 0" />
+        <parent link="l_thigh_left" />
+        <child link="l_shin_left" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-1.745329252"
+		  upper="2.35619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	
+	<link name="l_heel_left">
+        <inertial>
+            <mass value="1.5831" />
+            <origin xyz="0.0216 0 -0.0216" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0.0216 0 -0.0216" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.1080 0.1080 0.0540" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="1.0 0.5 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0.0216 0 -0.0216" rpy="0 0 0" />
+            <geometry>
+				<box size= "0.1080 0.1080 0.0540"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_heel_left_transform" type="fixed">
+        <origin xyz="0 0 -0.372184016" rpy="0 -0.1 0" />
+        <parent link="l_shin_left" />
+        <child link="l_heel_left_transform" />
+    </joint>	
+	<link name="l_heel_left_transform" />
+	
+    <joint name="j_heel_left_ry" type="revolute">
+        <parent link="l_heel_left_transform" />
+        <child link="l_heel_left_ry" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_heel_left_ry" />
+	
+    <joint name="j_heel_left_rz" type="revolute">
+	    <parent link="l_heel_left_ry" />
+        <child link="l_heel_left" />
+		<axis xyz="0 0 1" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+
+	
+	<!-- Right Leg -->
+	
+	<link name="l_thigh_right">
+        <inertial>
+            <mass value="6.5709" />
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0 -0 -0.18605" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.093025 0.093025 0.3721" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <geometry>
+				<box size="0.093025 0.093025 0.3721" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_thigh_right_transform" type="fixed">
+      <origin xyz="-0.01 -0.09072832 -0.05774016" rpy="0 0 0" />
+        <parent link="l_pelvis" />
+        <child link="l_thigh_right_transform" />
+    </joint>
+	<link name="l_thigh_right_transform" />
+	
+	<joint name="j_thigh_right_rx" type="revolute">
+        <parent link="l_thigh_right_transform" />
+        <child link="l_thigh_right_rx" />
+		<axis xyz="1 0 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_thigh_right_rx" />
+	
+	<joint name="j_thigh_right_ry" type="revolute">
+        <parent link="l_thigh_right_rx" />
+        <child link="l_thigh_right_ry" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_thigh_right_ry" />
+	
+	<joint name="j_thigh_right_rz" type="revolute">
+        <parent link="l_thigh_right_ry" />
+        <child link="l_thigh_right" />
+		<axis xyz="0 0 1" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+
+	
+	<link name="l_shin_right">
+        <inertial>
+            <mass value="3.7738" />
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0 -0 -0.18605" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.07474 0.07474 0.3737" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 -0.18605" rpy="0 0 0" />
+            <geometry>
+				<box size= "0.07474 0.07474 0.3737"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_shin_right" type="revolute">
+        <origin xyz="0 -0 -0.3721" rpy="0 0.15 0" />
+        <parent link="l_thigh_right" />
+        <child link="l_shin_right" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-1.745329252"
+		  upper="2.35619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	
+	<link name="l_heel_right">
+        <inertial>
+            <mass value="1.5831" />
+            <origin xyz="0.0216 0 -0.0216" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0.0216 0 -0.0216" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.1080 0.1080 0.0540" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="1.0 0.5 0 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0.0216 0 -0.0216" rpy="0 0 0" />
+            <geometry>
+				<box size= "0.1080 0.1080 0.0540"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_heel_right_transform" type="fixed">
+        <origin xyz="0 0 -0.372184016" rpy="0 -0.1 0" />
+        <parent link="l_shin_right" />
+        <child link="l_heel_right_transform" />
+    </joint>
+	<link name="l_heel_right_transform" />
+	
+	<joint name="j_heel_right_ry" type="revolute">
+        <parent link="l_heel_right_transform" />
+        <child link="l_heel_right_ry" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_heel_right_ry" />
+	
+    <joint name="j_heel_right_rz" type="revolute">
+	    <parent link="l_heel_right_ry" />
+        <child link="l_heel_right" />
+		<axis xyz="0 0 1" />
+		<dynamics damping="0.0" friction="0.00"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	
+	
+	<!-- Upper Body -->
+	
+	<link name="l_abdomen">
+        <inertial>
+            <mass value="20.1846" />
+            <origin xyz="0 0 0.12535" rpy="0 0 0" />
+            <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0" />
+        </inertial>
+        <visual>                     
+            <origin xyz="0 -0 0.12535" rpy="0 -0 0" />
+            <geometry>
+                <box size="0.12535 0.17549 0.2507" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0.8 0.8 0.8 1" />
+		  </material>
+        </visual>
+        <collision group="default">
+            <origin xyz="0 0 0.12535" rpy="0 0 0" />
+            <geometry>
+				<box size="0.12535 0.17549 0.2507" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_abdomen_transform" type="fixed">
+        <origin xyz="0 0 0.0562" rpy="0 0 0" />
+        <parent link="l_pelvis" />
+        <child link="l_abdomen_transform" />
+    </joint>
+	<link name="l_abdomen_transform" />
+	
+	<joint name="j_abdomen_rx" type="revolute">
+        <parent link="l_abdomen_transform" />
+        <child link="l_abdomen_rx" />
+		<axis xyz="1 0 0" />
+		<dynamics damping="0.0" friction="0.0"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+	<link name="l_abdomen_rx" />
+	
+	<joint name="j_abdomen_ry" type="revolute">
+	    <parent link="l_abdomen_rx" />
+        <child link="l_abdomen" />
+		<axis xyz="0 1 0" />
+		<dynamics damping="0.0" friction="0.0"/>
+		<limit
+		  lower="-2.2745329252"
+		  upper="2.235619449"
+		  effort="0"
+		  velocity="5.236" />
+    </joint>
+
+</robot>

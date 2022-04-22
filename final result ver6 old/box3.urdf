@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="box_skeleton3">
+    <link name="world" />
+	
+    <link name="box3_link">
+        <inertial>
+            <mass value="1.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+        </inertial> 
+ 
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.8 0.3 0.3" />
+            </geometry>
+			<material 
+			name="">
+			<color
+			  rgba="0 0.4 0.8 1" />
+		  </material>
+        </visual>
+        
+        <collision group="default">
+            <origisn xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.8 0.3 0.3" />
+            </geometry>
+        </collision>
+    </link>
+	
+
+    <joint name="box3_joint_transform" type="floating">
+        <origin xyz="9 1.3 0.3" rpy="0 0 0.4" />
+        <parent link="world" />
+        <child link="box3_link" />
+    </joint>
+
+	
+    
+
+	
+</robot>
